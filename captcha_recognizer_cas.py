@@ -43,9 +43,16 @@ def captcha_recognize(path):
     return res
 
 def performance_test(testdir):
+    '''
+        params:
+            testdir: a dir contains lots of captchas used for testing
+        usage:
+            run and use your own time counting tool to collect time info.
+    '''
     res = []
     for file in Path(testdir).iterdir():
         res.append(captcha_recognize(file))
         
 if __name__ == "__main__":
-    performance_test(r"./two_value_125")
+    tdir = r""
+    performance_test(tdir)
